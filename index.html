@@ -19,16 +19,16 @@
   <body>
     
     <script>
-      alert('0000');
+      alert('1_0000');
       var is_safari = navigator.userAgent.indexOf("Safari") > -1;
       // Chrome has Safari in the user agent so we need to filter (https://stackoverflow.com/a/7768006/1502448)
       var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
       if ((is_chrome) && (is_safari)) {is_safari = false;}  
       if (is_safari) {
-        alert('1111');
+        alert('1_1111');
           // See if cookie exists (https://stackoverflow.com/a/25617724/1502448)
           if (!document.cookie == 'fixed=fixed; expires=Tue, 19 Jan 2038 03:14:07 UTC; path=/') {
-            alert('2222');
+            alert('1_2222');
               // Set cookie to maximum (https://stackoverflow.com/a/33106316/1502448)
               document.cookie = 'fixed=fixed; expires=Tue, 19 Jan 2038 03:14:07 UTC; path=/';
               window.location.replace("https://lasarenasdevel.istinfor.com/_safari_fix.html");

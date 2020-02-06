@@ -16,26 +16,28 @@
     <script src="http://www.tinywebgallery.com/blog/wp-content/plugins/advanced-iframe/js/ai_external.js"></script>
 
     <script>
-        //alert("User-agent header sent: " + navigator.userAgent); //in log
-        alert('iniciando');
-        var is_safari = navigator.userAgent.indexOf("Safari") > -1;
-        // Chrome has Safari in the user agent so we need to filter (https://stackoverflow.com/a/7768006/1502448)
-        var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
-        if ((is_chrome) && (is_safari)) { is_safari = false; }
-        if (is_safari) {
-            alert('is_safari');
-            alert(document.cookie);
-            // See if cookie exists (https://stackoverflow.com/a/25617724/1502448)
-            if (!document.cookie) {
-                alert('!document.cookie');
-                // Set cookie to maximum (https://stackoverflow.com/a/33106316/1502448)
-                document.cookie = 'fixed=fixed; expires=Tue, 19 Jan 2038 03:14:07 UTC; path=/';
-                window.location.replace("https://lasarenasdevel.istinfor.com/_safari_fix.html");
-            }
-        }
-
         jQuery(document).ready(function ($) {
         });
+
+        function checkSafari() {
+            //alert("User-agent header sent: " + navigator.userAgent); //in log
+            alert('iniciando');
+            var is_safari = navigator.userAgent.indexOf("Safari") > -1;
+            // Chrome has Safari in the user agent so we need to filter (https://stackoverflow.com/a/7768006/1502448)
+            var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
+            if ((is_chrome) && (is_safari)) { is_safari = false; }
+            if (is_safari) {
+                alert('is_safari');
+                alert(document.cookie);
+                // See if cookie exists (https://stackoverflow.com/a/25617724/1502448)
+                if (!document.cookie) {
+                    alert('!document.cookie');
+                    // Set cookie to maximum (https://stackoverflow.com/a/33106316/1502448)
+                    document.cookie = 'fixed=fixed; expires=Tue, 19 Jan 2038 03:14:07 UTC; path=/';
+                    window.location.replace("https://lasarenasdevel.istinfor.com/_safari_fix.html");
+                }
+            }
+        }
 
         function ReloadIframe(id) {
             $('#iframe').attr("src", 'https://lasarenasdevel.istinfor.com/inici.aspx?AgencyIdEncrypt=' + $('#AgencyIdEncrypt').val());
@@ -57,6 +59,7 @@
         </div>
         <div class="col-md-6">
             <input type="button" value="ReloadIframe" onclick="ReloadIframe()" />
+            <input type="button" value="checkSafari" onclick="checkSafari()" />
         </div>
     </div>
 

@@ -41,6 +41,28 @@
         function ReloadIframe(id) {
             $('#iframeCruiseSearcher').attr("src", $('#entorno').val() + '/inici.aspx?iframeid=iframeCruiseSearcher&AgencyIdEncrypt=' + $('#AgencyIdEncrypt').val());
         }
+
+        function addScript(src) {
+            var s = document.createElement('script');
+            s.setAttribute('src', src);
+            document.body.appendChild(s);
+        }
+
+        function include(filename, status) {
+            var head = document.getElementsByTagName('head')[0];
+            if (status == on) {
+                script = document.createElement('script');
+                script.src = filename;
+                script.type = text / javascript;
+                head.appendChild(script)
+            }
+            else if (status == 'off') {
+                var scripts = head.getElementsByTagName('script');
+                if (scripts.length > 0) {
+                    head.removeChild(scripts[0]);
+                }
+            }
+        }
     </script>
 </head>
 <body>

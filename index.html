@@ -37,7 +37,7 @@
         jQuery(document).ready(function ($) {
         });
 
-        function ReloadIframe() {
+        function ReloadIframe(id) {
             $('#iframe').attr("src", 'https://lasarenasdevel.istinfor.com/inici.aspx?AgencyIdEncrypt=' + $('#AgencyIdEncrypt').val());
         }
     </script>
@@ -45,10 +45,13 @@
 <body>
     <h1>Pagina GITHUB CruiseBrowser</h1>
     <div class="row">
-        <div class="col-md-6" >
-            <input id="AgencyIdEncrypt" value="N33G9Q%2bd28s4EqSQOi2EpQ%3d%3d" type="text" style="width:100%" /> <!--000118-->
+        <div class="col-md-12">
+            <a href="#" onclick="$('#AgencyIdEncrypt').val($(this).attr('id')); ReloadIframe();" id="N33G9Q%2bd28s4EqSQOi2EpQ%3d%3d">000118 - https://www.cruiseconnection.be/vind-uw-cruise/</a>  
         </div>
-        <div class="col-md-6" >
+        <div class="col-md-6">
+            <input id="AgencyIdEncrypt" value="" type="text" style="width:100%" /> 
+        </div>
+        <div class="col-md-6">
             <input type="button" value="ReloadIframe" onclick="ReloadIframe()" />
         </div>
     </div>
